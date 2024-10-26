@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>five-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button  expand="full" [routerLink]="['/second-page']">Volver atras</ion-button>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>Tomar asistencia</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  
+    <ion-button fill="clear" [routerLink]="['/inicio']">Asistencia QR</ion-button>
+    <ion-button fill="clear" [routerLink]="['/six-page']">Asitencia Manual</ion-button>
+  </ion-card>
+  <p>pag 5  mostrar las asistencia de  los alumnos </p>
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>Ver asistencia</ion-card-title>
+    <ion-card-subtitle>Ver los alumnos con asistencia</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Here's a small text description for the card content. Nothing more, nothing less.
+  </ion-card-content>
+
+  <ion-button fill="clear" [routerLink]="['/seven-page']">Peligro asistencia</ion-button>
+  <ion-button fill="clear" [routerLink]="['/seven-page']">Ver asistencia alumnos</ion-button>
+  <p>pag 5 en esta seccion debe ir detalle alumno eliminar alumno editar alumno</p>
+  <p>nota alumno asistencia alumno mensaje alumno</p>
+</ion-card>
+
+
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="toolbar-principal">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/first-page"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Recuperar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card> 
+    <ion-card-header class="card-header">
+      <ion-card-title class="titulo">Recuperar Contraseña</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="texto-p-1">Ingresa tu nombre de usuario </p>
+      <ion-input
+      label="usuario"
+      label-placement="floating"
+      fill="outline"
+      placeholder="ExampleUser"
+      maxlength="20"
+      [(ngModel)]="inputExtractName"
+      required>
+    </ion-input>
+  
+
+      <p class="texto-p-1">Correo electrónico </p>
+      <ion-input
+        label="CORREO ELECTRONICO"
+        label-placement="floating"
+        fill="outline"
+        placeholder="ExampleUser@gmail.com"
+        [(ngModel)]="correo"
+        required>
+      </ion-input> 
+
+      <p>{{ mensaje }}</p>
+
+      <!-- Botón Recuperar -->
+      <ion-button class="boton-recuperar" (click)="recoverPassword()" expand="full" shape="round">
+        Recuperar
+      </ion-button>
+
+      <!-- Mostrar campos de nueva contraseña solo si el usuario es válido -->
+      <div *ngIf="usuarioValido">
+        <p class="texto-p-1">Nueva Contraseña</p>
+        <ion-input
+          label="NUEVA CONTRASEÑA"j
+          type="password"
+          label-placement="floating"
+          fill="outline"
+          [(ngModel)]="nuevaContrasena">
+        </ion-input>
+
+        <p class="texto-p-1">Confirmar Nueva Contraseña</p>
+        <ion-input
+          label="CONFIRMAR CONTRASEÑA"
+          type="password"
+          label-placement="floating"
+          fill="outline"
+          [(ngModel)]="confirmarContrasena">
+        </ion-input>
+
+        <ion-button class="boton-recuperar" (click)="resetPassword()" expand="full" shape="round">
+          Guardar Nueva Contraseña
+        </ion-button>
+      </div>
+
+      <ion-button class="boton-volver" (click)="goBack()" expand="full" shape="round">
+        <ion-icon name="arrow-back"></ion-icon>
+        Volver 
+      </ion-button> 
+    </ion-card-content>
+  </ion-card>
+</ion-content>

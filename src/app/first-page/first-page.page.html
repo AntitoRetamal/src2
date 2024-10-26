@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+
+  <div class="div-formulario">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="title-register">Ingreso de usuario </ion-card-title>
+      </ion-card-header>
+
+      <img class="logo" src="/assets/img/logo-proyecto.png" alt="mi imagen">
+
+      <ion-card-content>
+        <p class="text-p-1">Ingresa tu nombre y una contraseña de minimo 5 digitos.</p>
+        <!-- Campos de informacion  -->
+        <ion-input [(ngModel)]="nombre" label="usuario" label-placement="floating" fill="outline"
+          placeholder="Nombre usuario" maxlength="20" [ngClass]="{'input-focus': !inputValidoName}" slot="end">
+        </ion-input>
+
+        <br />
+
+        <ion-input [(ngModel)]="contrasena" label="CONTRASEÑA" label-placement="floating" fill="outline"
+          placeholder="Contraseña" maxlength="30" type="password" value="password"
+          [ngClass]="{'input-focus': !inputValidoPass}">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+
+        <!-- Mensaje de validacion -->
+        <p [ngClass]="{'text-validate': !MensajeValidacion}" class="text-p-2">{{ mensaje }}</p>
+
+        <!-- Botones -->
+        <div class="button-page">
+          <ion-button shape="round" expand="full" style="--background: #FFC107 " (click)="gotoSecondPage()">INGRESAR</ion-button>
+<ion-button shape="round" expand="full" style="--background: #FFC107 " (click)="gotoThirdPage()">RECUPERAR</ion-button>
+<ion-button shape="round" expand="full" style="--background: black; --color: white;" (click)="gotoregister()">CREAR CUENTA</ion-button>
+
+
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-title>RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-footer>

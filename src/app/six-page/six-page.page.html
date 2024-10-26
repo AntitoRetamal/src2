@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>six-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button  expand="full" [routerLink]="['/five-page']">Volver atras</ion-button>
+  <ion-button  expand="full" [routerLink]="['/second-page']">Pagina principal</ion-button>
+
+  <!-- Detalle del curso -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Seccion: 001</ion-card-title>
+      <ion-card-subtitle>Alumnos:  </ion-card-subtitle>
+      <p>Profesor: </p>
+    </ion-card-header>
+    
+
+  <!-- Alumnos del curso -->
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+  <p> {{ mensaje }}</p>
+  <ion-list>
+    <ion-card *ngFor= "let user of users">
+      <ion-card-header>
+        <ion-card-title>{{ user.name.first }} {{ user.name.last }}</ion-card-title>
+      </ion-card-header>
+      <!--cuerpo de la tarjeta-->
+      <ion-card-content>
+        <ion-item>
+          <!-- para agregar imagenes -->
+          <ion-thumbnail slot="start">
+            <img [src]="user.picture.thumbnail" alt="{{ user.name.first }}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>Email: {{ user.email }}</p>
+            <p>Telefono: {{ user.phone }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-checkbox class="check-ausente"
+                          labelPlacement="start" 
+                          justify="start"
+                          [(ngModel)]="user.estaAusente"
+                          (ionChange)="marcarAsistencia(user, 'ausente')">Ausente
+            </ion-checkbox>
+            <ion-checkbox class="check-presente"
+                          labelPlacement="start"
+                          justify="end"
+                          [(ngModel)]="user.estaPresente"
+                          (ionChange)="marcarAsistencia(user, 'presente')">Presente
+            </ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- Al hacer click que muestre mensaje de asistencia correcta-->
+    <ion-button  expand="full" (click)="tomarAsistencia()">Guardar Asistencia</ion-button>
+
+  </ion-list>
+
+</ion-content>

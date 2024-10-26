@@ -1,0 +1,19 @@
+
+
+.check-ausente {
+    --checkbox-background: #ffcccc; 
+    --checkbox-background-checked: #ff4d4d;
+    --size: 20px;
+    --border-color: #ffcccc;
+    --border-color-checked: #ff4d4d; 
+    --checkmark-color: #ffffff; 
+}
+
+.check-presente {
+    --checkbox-background: #ccffcc; 
+    --checkbox-background-checked: #4dff4d;
+    --size: 20px;
+    --border-color: #ccffcc; 
+    --border-color-checked: #4dff4d; 
+    --checkmark-color: #ffffff;
+}
